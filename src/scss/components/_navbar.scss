@@ -3,8 +3,8 @@
 //
 
 #mainNav {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     background-color: $gray-900;
 
     .navbar-toggler {
@@ -24,7 +24,7 @@
         text-transform: uppercase;
 
         img {
-            height: 1.5rem;
+            height: 4rem;
         }
     }
 
@@ -43,13 +43,18 @@
             }
         }
     }
+    &.navbar-shrink {
+        .nav-item .nav-link {
+            color: var(--bs-body-color)
+        }
+    }
 }
 
 // Responsive styling for screen width equal to or greater than the large breakpoint
 @include media-breakpoint-up(lg) {
     #mainNav {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
         border: none;
         background-color: transparent;
         transition: padding-top 0.3s ease-in-out,
@@ -60,23 +65,23 @@
             transition: font-size 0.3s ease-in-out;
 
             img {
-                height: 2rem;
+                height: 5rem;
                 transition: height 0.3s ease-in-out;
             }
         }
 
         // Styling for when the navbar shrinks on larger screens
         &.navbar-shrink {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            background-color: $gray-900;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            background-color: $white;
 
             .navbar-brand {
                 font-size: 1.25em;
 
                 svg,
                 img {
-                    height: 1.5rem;
+                    height: 4rem;
                 }
             }
         }

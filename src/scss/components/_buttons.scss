@@ -3,6 +3,9 @@
 //
 
 // Create a new xl button variant
+.btn {
+    font-family: $headings-font-family;
+}
 
 .btn-xl {
     padding: 1.25rem 2.5rem;

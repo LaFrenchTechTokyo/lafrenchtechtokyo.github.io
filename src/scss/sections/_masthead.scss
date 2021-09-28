@@ -3,15 +3,17 @@
 //
 
 header.masthead {
+    position:relative;
     padding-top: 6rem + 4.5rem;
     padding-bottom: 6rem;
     text-align: center;
     color: $white;
-    background-image: url("../assets/img/header-bg.jpg");
+    background:url("../assets/img/header-bg.jpg") rgba(0,0,0,0.25);
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
+    background-blend-mode: multiply;
 
     .masthead-subheading {
         font-size: 1.5rem;
