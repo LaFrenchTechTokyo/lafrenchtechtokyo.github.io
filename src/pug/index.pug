@@ -56,31 +56,38 @@ html(lang='en')
         // Services
         section#services.page-section
             .container
-                .text-center
-                    h2.section-heading.text-uppercase Services
-                    h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+                .text-center.section-heading-container
+                    h3.section-subheading.text-muted Learn about
+                    h2.section-heading.text-uppercase What we do
                 .row.text-center
-                    .col-md-4
+                    a.col-lg-3.col-sm-6(tile='A mission for startups', href='/support-for-startups/')
                         span.fa-stack.fa-4x
                             i.fas.fa-circle.fa-stack-2x.text-primary
-                            i.fas.fa-shopping-cart.fa-stack-1x.fa-inverse
-                        h4.my-3 E-Commerce
+                            i.far.fa-star.fa-stack-1x.fa-inverse
+                        h4.my-3 A mission for startups
                         p.text-muted
-                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
-                    .col-md-4
+                            | French Tech helps all members of its ecosystem to create exchanges and help them grow.
+                    a.col-lg-3.col-sm-6(tile='Get a French Tech Visa', href='/french-tech-visa/')
                         span.fa-stack.fa-4x
                             i.fas.fa-circle.fa-stack-2x.text-primary
-                            i.fas.fa-laptop.fa-stack-1x.fa-inverse
-                        h4.my-3 Responsive Design
+                            i.far.fa-compass.fa-stack-1x.fa-inverse
+                        h4.my-3 Get a French Tech Visa
                         p.text-muted
-                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
-                    .col-md-4
+                            | One of the latest initiatives to attract foreign talent to France is the introduction of the French Tech Visa.
+                    a.col-lg-3.col-sm-6(tile='About the community fund', href='/community-fund/')
                         span.fa-stack.fa-4x
                             i.fas.fa-circle.fa-stack-2x.text-primary
-                            i.fas.fa-lock.fa-stack-1x.fa-inverse
-                        h4.my-3 Web Security
+                            i.far.fa-money-bill-alt.fa-stack-1x.fa-inverse
+                        h4.my-3 About the community fund
                         p.text-muted
-                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+                            | The French government earmarked put wind in the sails of French Tech community and ecosystem initiatives.
+                    a.col-lg-3.col-sm-6(tile='Attend our events', href='/events/')
+                        span.fa-stack.fa-4x
+                            i.fas.fa-circle.fa-stack-2x.text-primary
+                            i.far.fa-calendar.fa-stack-1x.fa-inverse
+                        h4.my-3 Attend our events
+                        p.text-muted
+                            | Upcoming events and shows in which the French Tech Tokyo is implicated.
 
         // Portfolio Grid
         section#portfolio.page-section.bg-light
