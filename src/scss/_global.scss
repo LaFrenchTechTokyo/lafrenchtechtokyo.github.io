@@ -1,10 +1,10 @@
-// 
+//
 // Global theme styling
-// 
+//
 
 // Scroll padding for all scroll targets on page used with
 // native CSS smooth scrolling
-// 
+//
 // https://caniuse.com/?search=scroll-padding
 
 html {
@@ -59,6 +59,11 @@ p {
         font-weight: 400;
         font-family: $subheadings-font-family;
         text-transform: uppercase;
+    }
+
+    .section-text {
+        font-size: 1.25rem;
+        margin-top: 2.5rem;
     }
 }
 
