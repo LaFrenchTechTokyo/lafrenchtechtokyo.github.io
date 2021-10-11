@@ -64,28 +64,28 @@ html(lang='en')
                         span.fa-stack.fa-4x
                             i.fas.fa-circle.fa-stack-2x.text-primary
                             i.far.fa-star.fa-stack-1x.fa-inverse
-                        h4.my-3 A mission for startups
+                        h4.my-3.text-dark A mission for startups
                         p.text-muted
                             | French Tech helps all members of its ecosystem to create exchanges and help them grow.
                     a.col-lg-3.col-sm-6(tile='Get a French Tech Visa', href='/french-tech-visa/')
                         span.fa-stack.fa-4x
                             i.fas.fa-circle.fa-stack-2x.text-primary
                             i.far.fa-compass.fa-stack-1x.fa-inverse
-                        h4.my-3 Get a French Tech Visa
+                        h4.my-3.text-dark Get a French Tech Visa
                         p.text-muted
                             | One of the latest initiatives to attract foreign talent to France is the introduction of the French Tech Visa.
                     a.col-lg-3.col-sm-6(tile='About the community fund', href='/community-fund/')
                         span.fa-stack.fa-4x
                             i.fas.fa-circle.fa-stack-2x.text-primary
                             i.far.fa-money-bill-alt.fa-stack-1x.fa-inverse
-                        h4.my-3 About the community fund
+                        h4.my-3.text-dark About the community fund
                         p.text-muted
                             | The French government earmarked put wind in the sails of French Tech community and ecosystem initiatives.
                     a.col-lg-3.col-sm-6(tile='Attend our events', href='/events/')
                         span.fa-stack.fa-4x
                             i.fas.fa-circle.fa-stack-2x.text-primary
                             i.far.fa-calendar.fa-stack-1x.fa-inverse
-                        h4.my-3 Attend our events
+                        h4.my-3.text-dark Attend our events
                         p.text-muted
                             | Upcoming events and shows in which the French Tech Tokyo is implicated.
 
@@ -129,58 +129,40 @@ html(lang='en')
         // About
         section#about.page-section
             .container
-                .text-center
-                    h2.section-heading.text-uppercase About
-                    h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
-                ul.timeline
-                    li
-                        .timeline-image
-                            img.rounded-circle.img-fluid(src='assets/img/about/1.jpg', alt='...')
-                        .timeline-panel
-                            .timeline-heading
-                                h4 2009-2011
-                                h4.subheading Our Humble Beginnings
-                            .timeline-body
-                                p.text-muted
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                    li.timeline-inverted
-                        .timeline-image
-                            img.rounded-circle.img-fluid(src='assets/img/about/2.jpg', alt='...')
-                        .timeline-panel
-                            .timeline-heading
-                                h4 March 2011
-                                h4.subheading An Agency is Born
-                            .timeline-body
-                                p.text-muted
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                    li
-                        .timeline-image
-                            img.rounded-circle.img-fluid(src='assets/img/about/3.jpg', alt='...')
-                        .timeline-panel
-                            .timeline-heading
-                                h4 December 2015
-                                h4.subheading Transition to Full Service
-                            .timeline-body
-                                p.text-muted
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                    li.timeline-inverted
-                        .timeline-image
-                            img.rounded-circle.img-fluid(src='assets/img/about/4.jpg', alt='...')
-                        .timeline-panel
-                            .timeline-heading
-                                h4 July 2020
-                                h4.subheading Phase Two Expansion
-                            .timeline-body
-                                p.text-muted
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                    li.timeline-inverted
-                        .timeline-image
-                            h4
-                                | Be Part
-                                br
-                                | Of Our
-                                br
-                                | Story!
+                .text-center.section-heading-container
+                    h3.section-subheading.text-muted La French Tech Ecosystem
+                    h2.section-heading.text-uppercase Our Community
+
+                .row.text-center.equal
+                    .col-4
+                        .h4 Members
+                        img.img-fluid(src='/assets/img/group.png')
+                        p.text-muted
+                            | Members are those who have expressed an interest in La French Tech Tokyo.
+                            | They are welcome to freely join La French Tech Tokyo’s events and are kept informed through the newsletter and social media presence.
+                        a.btn.btn-primary.align-self-end(href='#')
+                            | Apply for membership
+
+                    .col-4
+                        .h4 Certified Members
+                        img.img-fluid(src='/assets/img/medal-2.png')
+                        p.text-muted
+                            | Startups who, by supporting in various way La French Tech Tokyo activities, will be associated to the brand and receive support from us in their goal to gain more visibility in the ecosystem.
+                        a.btn.btn-primary.align-self-end(href='#')
+                            | Become a certified member
+
+                    .col-4
+                        .h4 Partners
+                        img.img-fluid(src='/assets/img/partner.png')
+                        p.text-muted.mb-auto
+                            | Partners are local corporations, accelerators or institutions who wish to collaborate with La French Tech Tokyo with the main goal to improve the local entrepreneurial ecosystem.
+                        a.btn.btn-primary.align-self-end.justify-self-end(href='#')
+                            | Become a partner
+
+
+
+
+
 
         // Team
         section#team.page-section.bg-light
