@@ -4,29 +4,23 @@ on:
   push:
     branches:
       - master
-
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    uses: ./.github/workflows/build.yml
 
-    strategy:
-      matrix:
-        node-version: [14.x]
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs: build
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+    - uses: actions/cache@v2
+      id: restore-export
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - name: Build
-      run: |
-        npm run build
-        npm run export
+        path: ./out
+        key: ${{ github.sha }}
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
