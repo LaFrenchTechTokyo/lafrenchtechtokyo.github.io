@@ -28,7 +28,7 @@ jobs:
         npm run build
         npm run export
     - uses: actions/cache@v2
-        id: restore-export
-        with:
-          path: ./out
-          key: ${{ github.sha }}
+      id: restore-export
+      with:
+        path: ./out
+        key: ${{ github.sha }}
