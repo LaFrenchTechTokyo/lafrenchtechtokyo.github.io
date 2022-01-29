@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
+import { HOME_OG_URL, HOME_OG_IMAGE_URL } from '../lib/constants'
 
 export default function Meta() {
   return (
@@ -19,7 +19,9 @@ export default function Meta() {
         name="description"
         content={`A community of entrepreneurs in Japan and French entrepreneurs around the world, looking to create business opportunities in the Japanese startup ecosystem.`}
       />
+      <meta property="og:url" content={HOME_OG_URL} />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta property="og:image:secure_url" content={HOME_OG_IMAGE_URL} />
     </Head>
   )
 }
