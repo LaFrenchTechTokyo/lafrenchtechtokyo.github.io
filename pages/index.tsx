@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import Whatwedo from '../components/Home/Whatwedo'
 
 export default function Index() {
   return (
@@ -14,6 +15,7 @@ export default function Index() {
           </a>
         </div>
       </header>
+      <Whatwedo />
     </Layout>
   )
 }
