@@ -4,7 +4,13 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <script
+            async
+            src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+            crossOrigin="anonymous"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
