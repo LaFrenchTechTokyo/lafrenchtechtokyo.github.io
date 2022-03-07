@@ -4,6 +4,7 @@ import Whatwedo from '../components/Home/Whatwedo'
 import Whoweare from '../components/Home/Whoweare'
 import About from '../components/Home/About'
 import Team from '../components/Home/Team'
+import Client from '../components/Home/Client'
 
 export default function Index() {
   return (
@@ -13,6 +14,7 @@ export default function Index() {
       <Whoweare />
       <About />
       <Team />
+      <Client />
     </Layout>
   )
 }
