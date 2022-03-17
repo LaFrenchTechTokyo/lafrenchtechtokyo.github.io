@@ -13,7 +13,6 @@ export default function Hero() {
         <a className="btn btn-primary btn-lg text-uppercase" href="">
           About the community fund
         </a>
-        <Link href="/blog">To the blog</Link>
       </div>
     </header>
   )
