@@ -1,4 +1,4 @@
-export default function About() {
+export default function Community() {
   return (
     <section className="page-section" id="about">
       <div className="container">
@@ -12,16 +12,16 @@ export default function About() {
             <img className="img-fluid" src="/assets/img/group.png" alt="" />
             <p className="text-muted">
               Members are those who have expressed an interest in La French Tech Tokyo. They are
-              welcome to freely join La French Tech Tokyo’s events and are kept informed through the
+              welcome to freely join La French Tech Tokyo's events and are kept informed through the
               newsletter and social media presence.
             </p>
             <a
               className="btn btn-primary align-self-end"
-              href="https://forms.gle/h2zBRzPGK1uooCN59"
+              href="https://slack.lafrenchtechtokyo.jp"
               target="_blank"
               rel="noreferrer"
             >
-              Apply for membership
+              Join our community on Slack
             </a>
           </div>
           <div className="col-4">

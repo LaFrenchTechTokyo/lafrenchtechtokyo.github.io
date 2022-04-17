@@ -2,9 +2,8 @@ import Layout from '../components/Layout'
 import Hero from '../components/Home/Hero'
 import Whatwedo from '../components/Home/Whatwedo'
 import Whoweare from '../components/Home/Whoweare'
-import About from '../components/Home/About'
-import Team from '../components/Home/Team'
-import Client from '../components/Home/Client'
+import Community from '../components/Home/Community'
+// import Team from '../components/Home/Team'
 import Contact from '../components/Home/Contact'
 
 export default function Index() {
@@ -13,10 +12,9 @@ export default function Index() {
       <Hero />
       <Whatwedo />
       <Whoweare />
-      <About />
-      <Team />
-      <Client />
-      <Contact />
+      <Community />
+      {/* <Team /> */}
+      {/* <Contact /> */}
     </Layout>
   )
 }
