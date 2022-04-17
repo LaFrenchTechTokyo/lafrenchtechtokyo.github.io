@@ -11,6 +11,11 @@
   &:focus {
     border: none;
   }
+
+  @media screen and (max-width: 1140px) {
+    width:100%;
+    margin-bottom: 3px;
+  }
 }
 
 .subs_button {
