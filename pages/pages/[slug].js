@@ -19,12 +19,9 @@ export default function Post({ content, preview }) {
           <div>Loading…</div>
         ) : (
           <>
-            <article className="mb-32">
-              <div className="header">
-                <div>title</div>
-              </div>
-              <NotionRenderer recordMap={content} fullPage={false} darkMode={false} />
-            </article>
+            <h1>{content.title}</h1>
+            {content.cover ? <img src={content.cover} alt="cover" /> : <></>}
+            <NotionRenderer recordMap={content.blocks} fullPage={false} darkMode={false} />
           </>
         )}
       </div>
@@ -55,13 +52,16 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  // const response = await notion.pages.retrieve({ page_id: params.slug })
-  const response = await notionX.getPage(params.slug)
+  const responseO = await notion.pages.retrieve({ page_id: params.slug })
+  const blocks = await notionX.getPage(params.slug)
 
-  console.log('getStaticProps', response)
+  const title = responseO.properties.Title.title.map((t) => t.plain_text).join('')
+  const cover = responseO.cover?.external?.url
+  console.log('getStaticProps page', responseO)
+  console.log('getStaticProps blocks', blocks)
   return {
     props: {
-      content: { ...response, slug: params.slug },
+      content: { blocks, title, cover, slug: params.slug },
     },
   }
 }
