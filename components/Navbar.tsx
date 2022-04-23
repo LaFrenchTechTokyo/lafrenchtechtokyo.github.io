@@ -24,7 +24,7 @@ export default function MyNavbar() {
     >
       <Container>
         <Navbar.Brand href="#page-top">
-          <img src="assets/img/navbar-logo.png" height="80" width="80" alt="..." />
+          <img src="/assets/img/navbar-logo.png" height="80" width="80" alt="..." />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
