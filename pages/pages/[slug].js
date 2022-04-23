@@ -2,9 +2,8 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Layout from '../../components/Layout'
 import { NotionRenderer } from 'react-notion-x'
-import 'react-notion/src/styles.css'
-import { Client } from '@notionhq/client'
-import { NotionAPI } from 'notion-client'
+import 'react-notion-x/src/styles.css'
+import { getPage, getPages } from '../../lib/notion'
 
 export default function Post({ content, preview }) {
   const router = useRouter()
@@ -29,19 +28,11 @@ export default function Post({ content, preview }) {
   )
 }
 
-const notion = new Client({ auth: 'secret_oE9r4wDHpEaX0ionAlwyDcJFqb1M6TGlgHXy0bTKehW' })
-export const notionX = new NotionAPI()
-
 export async function getStaticPaths() {
-  const response = await notion.databases.query({
-    database_id: 'e972b88ddaad4a3ba9770e3d3cc251b0',
-  })
-  console.log('getStaticPaths', response)
+  const paths = await getPages()
 
   const result = {
-    paths: response.results.map((page) => {
-      return { params: { slug: page.id } }
-    }),
+    paths,
     fallback: false, // false or 'blocking'
   }
 
@@ -52,16 +43,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const responseO = await notion.pages.retrieve({ page_id: params.slug })
-  const blocks = await notionX.getPage(params.slug)
-
-  const title = responseO.properties.Title.title.map((t) => t.plain_text).join('')
-  const cover = responseO.cover?.external?.url
-  console.log('getStaticProps page', responseO)
-  console.log('getStaticProps blocks', blocks)
+  const page = await getPage(params.slug)
   return {
     props: {
-      content: { blocks, title, cover, slug: params.slug },
+      content: page,
     },
   }
 }
