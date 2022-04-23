@@ -18,6 +18,7 @@
     "react": "^17.0.2",
     "react-bootstrap": "^2.2.3",
     "react-dom": "^17.0.2",
+    "react-notion": "^0.10.0",
     "react-notion-x": "^6.12.3",
     "remark": "13.0.0",
     "remark-html": "13.0.2",
