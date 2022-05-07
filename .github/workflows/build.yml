@@ -25,6 +25,8 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - name: Build
+      env:
+        NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
       run: |
         npm run build
         npm run export
