@@ -17,9 +17,17 @@ export async function getPage(page_id: string) {
   console.log('getPage page', page)
   console.log('getPage blocks', blocks)
 
-  const title = page.properties.Title.title.map((t) => t.plain_text).join('')
-  const cover = page.cover?.external?.url
+  let title = ''
+  let cover: string | null = null
 
+  if ('properties' in page) {
+    if (page.properties.Title.type === 'title') {
+      title = page.properties.Title.title.map((t) => t.plain_text).join('')
+    }
+    if (page.cover?.type === 'external') {
+      cover = page.cover.external.url
+    }
+  }
   return { blocks, title, cover, slug: page_id }
 }
 
@@ -34,7 +42,6 @@ export async function getPages() {
   })
 
   console.log('getPages result', result)
-  console.log('getPages result paths', result.paths)
 
   return result
 }
