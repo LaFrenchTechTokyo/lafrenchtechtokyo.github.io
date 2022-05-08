@@ -19,17 +19,31 @@ export async function getPage(pageId: string) {
   const { page, blocks } = await getDatabasePage(pagesDbId, pageId)
 
   let title = ''
+  let metaDescription = ''
   let cover: string | null = null
+  let ogImage: string | null = null
 
   if ('properties' in page) {
     if (page.properties.Title.type === 'title') {
       title = page.properties.Title.title.map((t) => t.plain_text).join('')
     }
+    if (page.properties.meta_description.type === 'rich_text') {
+      metaDescription = page.properties.meta_description.rich_text.map((t) => t.plain_text).join('')
+    }
     if (page.cover?.type === 'external') {
       cover = page.cover.external.url
+    } else if (page.cover?.type === 'file') {
+      cover = page.cover.file.url
+    }
+    if (
+      page.properties.og_image?.type === 'files' &&
+      page.properties.og_image.files[0]?.type === 'file'
+    ) {
+      ogImage = page.properties.og_image.files[0].file.url
     }
   }
-  return { blocks, title, cover, slug: pageId }
+
+  return { blocks, title, metaDescription, cover, slug: pageId }
 }
 
 // Blog Posts
@@ -42,12 +56,16 @@ export async function getPost(slug: string) {
   const { page, blocks } = await getDatabasePage(postsDbId, slug)
 
   let title = ''
+  let metaDescription = ''
   let cover: string | null = null
   let ogImage: string | null = null
 
   if ('properties' in page) {
     if (page.properties.Title.type === 'title') {
       title = page.properties.Title.title.map((t) => t.plain_text).join('')
+    }
+    if (page.properties.meta_description.type === 'rich_text') {
+      title = page.properties.meta_description.rich_text.map((t) => t.plain_text).join('')
     }
     if (page.cover?.type === 'external') {
       cover = page.cover.external.url
@@ -56,12 +74,12 @@ export async function getPost(slug: string) {
     }
     if (
       page.properties.og_image?.type === 'files' &&
-      page.properties.og_image.files[0].type === 'file'
+      page.properties.og_image.files[0]?.type === 'file'
     ) {
       ogImage = page.properties.og_image.files[0].file.url
     }
   }
-  return { blocks, title, cover, ogImage, slug }
+  return { blocks, title, metaDescription, cover, ogImage, slug }
 }
 
 // Internal

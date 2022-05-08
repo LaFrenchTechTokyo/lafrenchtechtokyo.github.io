@@ -1,29 +1,38 @@
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 import ErrorPage from 'next/error'
-import Layout from '../../components/Layout'
 import { NotionRenderer } from 'react-notion-x'
 import 'react-notion-x/src/styles.css'
+
 import { getPage, getPages } from '../../lib/notion'
 
-export default function Post({ content, preview }) {
+import Layout from '../../components/Layout'
+import Header from '../../components/Page/Header'
+
+export default function Page({ content, preview }) {
   const router = useRouter()
   if (!router.isFallback && !content?.slug) {
     return <ErrorPage statusCode={404} />
   }
   return (
     <Layout preview={preview}>
-      <div className="container">
-        <div className="header" />
-        {router.isFallback ? (
-          <div>Loading…</div>
-        ) : (
-          <>
-            <h1>{content.title}</h1>
-            {content.cover ? <img src={content.cover} alt="cover" /> : <></>}
+      {router.isFallback ? (
+        <div>Loading…</div>
+      ) : (
+        <>
+          <Head>
+            <title>{content.title} | La French Tech Tokyo</title>
+            {content.metaDescription && (
+              <meta name="description" content={content.metaDescription} />
+            )}
+            {content.ogImage && <meta property="og:image" content={content.ogImage} />}
+          </Head>
+          <Header title={content.title} coverImage={content.cover} />
+          <div className="container">
             <NotionRenderer recordMap={content.blocks} fullPage={false} darkMode={false} />
-          </>
-        )}
-      </div>
+          </div>
+        </>
+      )}
     </Layout>
   )
 }

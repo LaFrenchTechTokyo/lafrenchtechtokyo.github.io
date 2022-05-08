@@ -1,0 +1,38 @@
+.cover {
+  position: relative;
+  padding: 8% 0;
+  text-align: center;
+  border-top: 0 none;
+  border-bottom: 0 none;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #f8f9f9;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    background: rgba(0,0,0,.3);
+    content: " ";
+  }
+
+}
+
+.container {
+  margin-top: 30px;
+  position: relative;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  clear: both;
+  font-family: "Raleway",Helvetica,Arial,sans-serif;
+}
