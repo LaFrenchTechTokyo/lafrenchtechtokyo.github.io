@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Community() {
   return (
     <section className="page-section" id="about">
@@ -49,12 +51,9 @@ export default function Community() {
               with La French Tech Tokyo with the main goal to improve the local entrepreneurial
               ecosystem.
             </p>
-            <a
-              className="btn btn-primary align-self-end justify-self-end"
-              href="/become-a-partner/"
-            >
-              Become a partner
-            </a>
+            <Link href="/become-a-partner/">
+              <a className="btn btn-primary align-self-end justify-self-end">Become a partner</a>
+            </Link>
           </div>
         </div>
       </div>
