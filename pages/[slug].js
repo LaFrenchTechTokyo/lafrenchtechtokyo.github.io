@@ -4,10 +4,10 @@ import ErrorPage from 'next/error'
 import { NotionRenderer } from 'react-notion-x'
 import 'react-notion-x/src/styles.css'
 
-import { getPage, getPages } from '../../lib/notion'
+import { getPage, getPages } from '../lib/notion'
 
-import Layout from '../../components/Layout'
-import Header from '../../components/Page/Header'
+import Layout from '../components/Layout'
+import Header from '../components/Page/Header'
 
 export default function Page({ content, preview }) {
   const router = useRouter()
