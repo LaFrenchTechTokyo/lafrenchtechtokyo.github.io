@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Whoweare() {
   return (
     <section className="page-section bg-light" id="portfolio">
@@ -13,18 +15,20 @@ export default function Whoweare() {
         <div className="row">
           <div className="col-6">
             <div className="portfolio-item">
-              <a className="portfolio-link" href="/our-vision">
-                <div className="portfolio-hover">
-                  <div className="portfolio-hover-content">
-                    <i className="fas fa-plus fa-3x"></i>
+              <Link href="/our-vision">
+                <a className="portfolio-link">
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content">
+                      <i className="fas fa-plus fa-3x"></i>
+                    </div>
                   </div>
-                </div>
-                <img
-                  className="img-fluid"
-                  src="/assets/img/French_Tech_Tokyo_Our_Vision-640x400.png"
-                  alt="French Tech Tokyo Vision"
-                />
-              </a>
+                  <img
+                    className="img-fluid"
+                    src="/assets/img/French_Tech_Tokyo_Our_Vision-640x400.png"
+                    alt="French Tech Tokyo Vision"
+                  />
+                </a>
+              </Link>
               <div className="portfolio-caption">
                 <div className="portfolio-caption-heading">Our Vision</div>
                 <div className="portfolio-caption-subheading text-muted">
@@ -36,18 +40,20 @@ export default function Whoweare() {
           </div>
           <div className="col-6">
             <div className="portfolio-item">
-              <a className="portfolio-link" href="/our-team">
-                <div className="portfolio-hover">
-                  <div className="portfolio-hover-content">
-                    <i className="fas fa-plus fa-3x"></i>
+              <Link href="/our-team">
+                <a className="portfolio-link">
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content">
+                      <i className="fas fa-plus fa-3x"></i>
+                    </div>
                   </div>
-                </div>
-                <img
-                  className="img-fluid"
-                  src="/assets/img/French-Tech-Team-640x400.jpeg"
-                  alt="French Tech Tokyo Team"
-                />
-              </a>
+                  <img
+                    className="img-fluid"
+                    src="/assets/img/French-Tech-Team-640x400.jpeg"
+                    alt="French Tech Tokyo Team"
+                  />
+                </a>
+              </Link>
               <div className="portfolio-caption">
                 <div className="portfolio-caption-heading">Our Team</div>
                 <div className="portfolio-caption-subheading text-muted">
