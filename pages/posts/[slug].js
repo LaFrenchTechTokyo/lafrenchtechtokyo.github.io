@@ -1,81 +1,57 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import Container from '../../components/container'
-import PostBody from '../../components/post-body'
-import Header from '../../components/header'
-import PostHeader from '../../components/post-header'
 import Layout from '../../components/Layout'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
-import PostTitle from '../../components/post-title'
+import { NotionRenderer } from 'react-notion-x'
+import 'react-notion-x/src/styles.css'
+import { getPost, getPosts } from '../../lib/notion'
 import Head from 'next/head'
-import markdownToHtml from '../../lib/markdownToHtml'
 
-export default function Post({ post, morePosts, preview }) {
+export default function Post({ content, preview }) {
   const router = useRouter()
-  if (!router.isFallback && !post?.slug) {
+  if (!router.isFallback && !content?.slug) {
     return <ErrorPage statusCode={404} />
   }
   return (
     <Layout preview={preview}>
-      <Container>
-        <Header />
+      <div className="container">
+        <div className="header" />
         {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
+          <div>Loading…</div>
         ) : (
           <>
-            <article className="mb-32">
-              <Head>
-                <title>{post.title} | Next.js Blog Example</title>
-                <meta property="og:image" content={post.ogImage.url} />
-              </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              />
-              <PostBody content={post.content} />
-            </article>
+            <Head>
+              <title>{content.title} | Next.js Blog Example</title>
+              <meta property="og:image" content={content.ogImage} />
+            </Head>
+            <h1>{content.title}</h1>
+            {content.cover ? <img src={content.cover} alt="cover" /> : <></>}
+            <NotionRenderer recordMap={content.blocks} fullPage={false} darkMode={false} />
           </>
         )}
-      </Container>
+      </div>
     </Layout>
   )
 }
 
-export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug, [
-    'title',
-    'date',
-    'slug',
-    'author',
-    'content',
-    'ogImage',
-    'coverImage',
-  ])
-  const content = await markdownToHtml(post.content || '')
+export async function getStaticPaths() {
+  const paths = await getPosts()
 
-  return {
-    props: {
-      post: {
-        ...post,
-        content,
-      },
-    },
+  const result = {
+    paths,
+    fallback: false, // false or 'blocking'
   }
+
+  console.log('getStaticPaths result', result)
+  console.log('getStaticPaths result paths', result.paths)
+
+  return result
 }
 
-export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
-
+export async function getStaticProps({ params }) {
+  const page = await getPost(params.slug)
   return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      }
-    }),
-    fallback: false,
+    props: {
+      content: page,
+    },
   }
 }
