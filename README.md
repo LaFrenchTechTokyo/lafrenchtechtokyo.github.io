@@ -1,38 +1,17 @@
-# La French Tech Tokyo homepage
+# La French Tech Tokyo · Website Redirect
 
-Official website developed by the community that will be hosted at https://lafrenchtechtokyo.jp
+## 🇬🇧 English
 
-## Setup
+The official website for La French Tech Tokyo has moved!  
+You can now find us at **[https://lafrenchtechtokyo.org](https://lafrenchtechtokyo.org)**.
 
-```
-npm install
-```
+👉 Please update your bookmarks and visit us at the new domain!
 
-## Commands
+---
 
-Start dev environment
+## 🇫🇷 Français
 
-```
-npm run dev
-```
+Le site officiel de La French Tech Tokyo a changé d’adresse !  
+Vous pouvez maintenant nous retrouver sur **[https://lafrenchtechtokyo.org](https://lafrenchtechtokyo.org)**.
 
-Build prod environment
-
-```
-npm run build
-```
-
-Start prod environment
-
-```
-npm run start
-```
-
-## Generated from Next js starter template
-
-```
-npx create-next-app --example blog-starter blog-starter-app
-
-```
-
-Source: https://github.com/vercel/next.js/tree/canary/examples/blog-starter
+👉 Merci de mettre à jour vos favoris et de visiter notre nouveau site !

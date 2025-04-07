@@ -1,0 +1,13 @@
+name: No-op
+
+on:
+  push:
+    branches-ignore:
+      - '**'
+
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do nothing
+        run: echo "No CI/CD needed for this redirect repo."
